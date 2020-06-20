@@ -53,9 +53,10 @@ function renderHero(){
             let img = new Image();
             img.src = hero.ico;
             //修改选中图标
+            eles.game.heroShow.innerHTML='';//先清空一下
             eles.game.heroShow.appendChild(img);
             console.log("渲染技能",hero);
-
+            
             renderSkills(hero);
         }
         eles.game.heroView.appendChild(heroItem);
