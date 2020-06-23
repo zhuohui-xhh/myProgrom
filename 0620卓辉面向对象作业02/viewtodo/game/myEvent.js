@@ -21,6 +21,10 @@ export default class MyEvent{
     // 作业： 移除事件方法补全
     removeEvent(eventName,fn){
         // 补全方法；
+        if(typeof this.handler[eventName] === 'undefined'){
+            this.handler[eventName] = [];
+        }
+        this.handler[eventName].push(fn);
     }
 
 

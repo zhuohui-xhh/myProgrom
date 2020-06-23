@@ -9,8 +9,12 @@ export default class Hero extends MyEvent{
         this.ico = ico;
         // 自定义事件绑定；
         this.addEvent("heroInit",this.init);
+        this.removeEvent("heroDelate",this.delate);
     }
     init(){
         console.log("初始化...");
+    }
+    delate(){
+        console.log("这是要执行的删除事件")
     }
 }

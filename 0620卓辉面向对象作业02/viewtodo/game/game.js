@@ -11,6 +11,7 @@ class Game{
         this.player.heros.forEach(item=>{
             item.trigger("heroInit");
             // console.log();
+            item.trigger('heroDelate');
         })
     }
 }
