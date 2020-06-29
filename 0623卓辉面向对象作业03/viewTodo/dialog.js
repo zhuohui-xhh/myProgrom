@@ -1,26 +1,49 @@
 // import MyEvent from './myEvent.js';
 
 export default class Dialog extends EventTarget{
-    constructor(options) {
+    constructor({
+        width= "30%",
+        height= "250px",
+        title= "测试标题",
+        content= "测试内容",
+        dragable= true, //是否可拖拽
+        maskable= true, //是否有遮罩
+        isCancel= false, //是否有取消
+        cancel=function(){},
+        success=function(){}
+    }) {
         super();
         // console.log(options);
-        // 作业：通过默认参数合并配置；z
+        // 作业：通过默认参数合并配置；
+        let options = {
+            width,
+            height,
+            title,
+            content,
+            dragable, //是否可拖拽
+            maskable, //是否有遮罩
+            isCancel, //是否有取消
+            cancel,
+            success,
+        }  
+        // console.log(options);
+        this.newOpts = options;
         //   let { width = "40%" } =    options
         // 默认配置；
-        let opts = {
-            width: "30%",
-            height: "250px",
-            title: "测试标题",
-            content: "测试内容",
-            dragable: true, //是否可拖拽
-            maskable: true, //是否有遮罩
-            isCancel: false, //是否有取消
-            cancel:function(){},
-            success:function(){}
-        }
-        // 合并配置；
-        let newOpts = Object.assign(opts, options);
-        this.newOpts = newOpts;
+        // let opts = {
+        //     width: "30%",
+        //     height: "250px",
+        //     title: "测试标题",
+        //     content: "测试内容",
+        //     dragable: true, //是否可拖拽
+        //     maskable: true, //是否有遮罩
+        //     isCancel: false, //是否有取消
+        //     cancel:function(){},
+        //     success:function(){}
+        // }
+        // // 合并配置；
+        // let newOpts = Object.assign(opts, options);
+        // this.newOpts = newOpts;
         //   console.log(newOpts);
         this.init();
     }
