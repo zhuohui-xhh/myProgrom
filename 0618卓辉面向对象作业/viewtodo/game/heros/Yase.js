@@ -1,6 +1,7 @@
 import S11610 from '../skills/yase/s11610.js'
 import S11620 from '../skills/yase/s11620.js'
 import S11630 from '../skills/yase/s11630.js'
+
 export default class Yase {
     constructor() {
         this.name = "亚瑟";

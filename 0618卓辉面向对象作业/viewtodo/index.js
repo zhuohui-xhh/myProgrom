@@ -19,7 +19,8 @@ let eles = {
         heroView:document.querySelector(".heroView"),
         chioseusername:document.querySelector(".chioseusername"),
         heroShow:document.querySelector(".heroShow"),
-        skillsView:document.querySelector(".skillsView")
+        skillsView:document.querySelector(".skillsView"),
+        skinShow:document.querySelector(".skinShow")
     }
 }
 eles.login.loginBtn.onclick = function(){
