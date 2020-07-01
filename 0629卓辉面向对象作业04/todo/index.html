@@ -17,6 +17,7 @@
 <body>
     <div class="box"></div>
     <div class="box"></div>
+    <button class="btn">点击</button>
 </body>
 <script>
     // $(".box").click(()=>{
@@ -52,6 +53,11 @@
 //    let res =  $(".box").css("background");
 //    console.log(res);
 // $(".box").css("background","blue");
-$(".box").css({background:"yellow",width:300});
+// $(".box").css({background:"yellow",width:300});
+$(".btn").click(()=>{
+    $(".box").animate({width:"300px"},function(){
+        console.log("动画完成!!")
+    });
+})
 </script>
 </html>

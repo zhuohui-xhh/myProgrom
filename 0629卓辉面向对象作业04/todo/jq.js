@@ -98,6 +98,13 @@ class Jq{
         }
         ele.style[styleName] = styleValue;
     }
+    //动画封装
+    //参数一是一个包含属性的对象参数，参数二 ：一个回调函数
+    animate(obj,fn){
+        this.css({transition: "all 1000ms linear 500ms"})
+        this.css(obj);
+        fn()
+    }
 }
 
 // {0:"值一",1:"值二"};
