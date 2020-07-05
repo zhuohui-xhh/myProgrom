@@ -58,7 +58,9 @@ class Vue{
                 // console.log(attrName,attrValue);
                 if(attrName==="v-text"){
                     node.innerText = this._data[attrValue];
-                }else if("v-model"){
+                }else if(attrName==="v-html"){
+                    node.innerHTML = this._data[attrValue];
+                }else if(attrName==="v-model"){
                     node.value = this._data[attrValue];
                     node.addEventListener("input",e=>{
                         // console.log(e.target.value);
