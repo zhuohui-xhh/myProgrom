@@ -85,7 +85,11 @@ class KPromise {
 
 
     }
-
+    // finally(cb){
+    //     cb()
+    //     let p = this;
+    //     return p;
+    // }
     static resolve(val){
         return new KPromise(resolve=>{
             resolve(val);
@@ -128,3 +132,14 @@ class KPromise {
 
 
 }
+
+KPromise.prototype.finally = function (callback) {
+    // console.log(this) //this是当前实例,一个pending状态的实例
+    let P = this.constructor;//P 指向构造函数class Kpromise
+    // let a = P.resolve(callback()) 
+    // debugger
+    return this.then(
+    value => P.resolve(callback()).then(() => value),
+    reason => P.resolve(callback()).then(() => { throw reason })
+    );
+};

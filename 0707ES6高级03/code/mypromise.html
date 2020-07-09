@@ -63,25 +63,41 @@
     //     console.log(res);
     // })
 
-    let p1 = new KPromise(resolve=>{
-        setTimeout(() => {
-            resolve(111);
-        }, 1000);
+    // let p1 = new KPromise(resolve=>{
+    //     setTimeout(() => {
+    //         resolve(111);
+    //     }, 1000);
         
-    })
-    let p2 = new KPromise(resolve=>{
-        setTimeout(() => {
-            resolve(222);
-        }, 2000);
-    })
+    // })
+    // let p2 = new KPromise(resolve=>{
+    //     setTimeout(() => {
+    //         resolve(222);
+    //     }, 2000);
+    // })
     // 所有结果都必须是resolve；
     // Promise.all([p1,p2]).then(res=>{
     //     console.log(res);
     // })
-        KPromise.race([p1,p2]).then(res=>{
-            console.log(res);
-        })
+        // KPromise.race([p1,p2]).then(res=>{
+        //     console.log(res);
+        // })
 
+
+
+// 作业 ：在老师的代码基础上 实现 原生promise 里的finally方法功能；
+let p1 = new KPromise((resolve,reject)=>{
+        setTimeout(() => {
+            // resolve(111);
+            reject("失败")
+        }, 1000);
+    })
+  let p2 =  p1.then(res=>{
+        console.log(res);
+    }).finally(()=>{
+        console.log("执行了finally");
+    })
+
+    console.log(p2)
 
 </script>
 </html>
